@@ -33,13 +33,14 @@ d3.json(quakeurl).then(data => {
     for (i=0;i<data.features.length;i++) {
 
         var magnitude = data.features[i].properties.mag
+        var depth = data.features[i].geometry.coordinates[2]
 
         L.circle([data.features[i].geometry.coordinates[1],data.features[i].geometry.coordinates[0]], {
                     fillOpacity: 0.5,
-                    fillColor: chooseColor(data.features[i].geometry.coordinates[2]),
+                    fillColor: chooseColor(depth),
                     radius: markerSize(magnitude),
                     weight: 0.4,
                     color: "black"
-        }).bindPopup(`<h2>Magnitude: ${magnitude}</h2>`).addTo(myMap)
+        }).bindPopup(`<h3>Magnitude: ${magnitude} <br>Depth: ${depth}</h3>`).addTo(myMap)
     }
 })
