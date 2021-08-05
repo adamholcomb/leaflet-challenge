@@ -19,7 +19,7 @@ function chooseColor(depth) {
     else if (depth < 10) return "orange";
     else if (depth <15) return "red";
     else if (depth < 20) return "maroon";
-    else return "black";}
+    else return "gray";}
 
     function markerSize(magnitude) {
         return (magnitude)*17000
