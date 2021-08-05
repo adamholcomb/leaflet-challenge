@@ -22,7 +22,7 @@ function chooseColor(depth) {
     else return "gray";}
 
     function markerSize(magnitude) {
-        return (magnitude)*17000
+        return (magnitude)*15000
     }
 
 // Bring in geoJSON info
