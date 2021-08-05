@@ -21,21 +21,25 @@ function chooseColor(depth) {
     else if (depth < 20) return "maroon";
     else return "black";}
 
+    function markerSize(magnitude) {
+        return (magnitude)*17000
+    }
+
 // Bring in geoJSON info
 d3.json(quakeurl).then(data => {
+
     console.log(data)
-    console.log(features.properties)
-    L.geoJson(data, {
-        style: function(feature) {
-            return {
-                fillColor: chooseColor(feature.geometry.coordinates[2]),
-                 
-            }
 
-        }
+    for (i=0;i<data.features.length;i++) {
 
+        var magnitude = data.features[i].properties.mag
 
-
-
-    }).addTo(myMap)
+        L.circle([data.features[i].geometry.coordinates[1],data.features[i].geometry.coordinates[0]], {
+                    fillOpacity: 0.5,
+                    fillColor: chooseColor(data.features[i].geometry.coordinates[2]),
+                    radius: markerSize(magnitude),
+                    weight: 0.4,
+                    color: "black"
+        }).bindPopup(`<h2>Magnitude: ${magnitude}</h2>`).addTo(myMap)
+    }
 })
