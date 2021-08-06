@@ -55,4 +55,8 @@ d3.json(quakeurl).then(data => {
         limits.forEach(function(limit, index) {
             labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
           });
+
+        div.innerHTML += "<ul>" + labels.join("") + "</ul>";
+        return div;
+    };
 })
