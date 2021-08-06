@@ -41,7 +41,7 @@ d3.json(quakeurl).then(data => {
                     radius: markerSize(magnitude),
                     weight: 0.4,
                     color: "black"
-        }).bindPopup(`<h3>Magnitude: ${magnitude} <br>Depth: ${depth}</h3>`).addTo(myMap)4
+        }).bindPopup(`<h3>Magnitude: ${magnitude} <br>Depth: ${depth}</h3>`).addTo(myMap)
     }
 
     // Add legend
@@ -59,4 +59,7 @@ d3.json(quakeurl).then(data => {
         div.innerHTML += "<ul>" + labels.join("") + "</ul>";
         return div;
     };
+
+    // Adding the legend to the map
+    legend.addTo(myMap);
 })
