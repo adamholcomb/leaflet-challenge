@@ -15,7 +15,7 @@ L.tileLayer(basemapurl, {
 }).addTo(myMap);
 
 function chooseColor(depth) {
-    if (depth < 5) return "red";
+    if (depth < 5) return "yellow";
     else if (depth < 10) return "orange";
     else if (depth <15) return "red";
     else if (depth < 20) return "maroon";
