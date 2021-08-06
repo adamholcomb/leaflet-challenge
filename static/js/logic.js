@@ -46,5 +46,7 @@ d3.json(quakeurl).then(data => {
 
     // Add legend
     var legend = L.control({position: "bottomright"})
-    
+    legend.onAdd = function() {
+        var div = L.DomUtil.create("div", "info legend")
+        var limits = ['<5','5-10','10-15','15-20','>20']
 })
