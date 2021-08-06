@@ -49,4 +49,10 @@ d3.json(quakeurl).then(data => {
     legend.onAdd = function() {
         var div = L.DomUtil.create("div", "info legend")
         var limits = ['<5','5-10','10-15','15-20','>20']
+        var colors = ['yellow','orange','red','maroon','gray']
+        var labels = []
+
+        limits.forEach(function(limit, index) {
+            labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
+          });
 })
