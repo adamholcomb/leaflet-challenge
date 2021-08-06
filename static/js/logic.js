@@ -53,10 +53,10 @@ d3.json(quakeurl).then(data => {
         var labels = []
 
         limits.forEach(function(limit, index) {
-            labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
-          });
+            labels.push("<div class = 'row'><li style=\"background-color: " + colors[index] +  "; width: 60px; text-align:center"+ "; height: 20px" + "\">" + limit + "</li></div>");
+        });
 
-        div.innerHTML += "<ul>" + labels.join("") + "</ul>";
+        div.innerHTML += "<h1 style='color:white;text-align:right;'>Depth</h1><ul style = 'list-style-type:none;'><h3>" + labels.join("") + "</h3></ul>";
         return div;
     };
 
